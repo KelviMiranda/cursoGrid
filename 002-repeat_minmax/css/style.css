@@ -1,0 +1,42 @@
+/* 
+    repeat() : é uma função CSS que facilita a repetição de valores ao criar layouts com CSS Grid Layout ou Flexbox. 
+    Ela é especialmente útil quando você precisa repetir o mesmo valor várias vezes em uma propriedade CSS, 
+    tornando o código mais conciso e fácil de manter.
+
+
+    minmax() é outra função CSS útil no contexto do CSS Grid Layout e Flexbox. 
+    Ela permite definir um intervalo ou limite para os tamanhos de um elemento, 
+    possibilitando criar layouts flexíveis que se adaptam ao espaço disponível.
+
+    minmax(min_value, max_value);
+    min_value: É o tamanho mínimo que o elemento pode ter.
+    max_value: É o tamanho máximo que o elemento pode ter.
+
+    A função minmax() é especialmente útil ao definir tamanhos de colunas 
+    ou linhas em uma grade (grid) ou ao definir tamanhos flexíveis em um layout com Flexbox.
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 10px;
+    grid-template-rows: 200px 200px 200px ;
+    grid-auto-rows: 200px;
+}
+
+.container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: royalblue;
+}
+.container > div:nth-child(even){
+    background-color: skyblue;
+}
