@@ -1,0 +1,41 @@
+/* 
+    justify-items: Essa propriedade controla o alinhamento do conteúdo horizontalmente dentro das células da grade. 
+    Ela define como os elementos se alinham ao longo do eixo das colunas. 
+    Valores possíveis são: start (alinhar à esquerda), end (alinhar à direita), center (centralizar) e stretch (estender para preencher a célula).
+
+    align-items: Essa propriedade controla o alinhamento do conteúdo verticalmente dentro das células da grade. 
+    Ela define como os elementos se alinham ao longo do eixo das linhas. 
+    Valores possíveis são: start (alinhar ao topo), end (alinhar à base), center (centralizar) e stretch (estender para preencher a célula).
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    grid-template-columns:repeat(3, 1fr);
+    grid-gap: .7rem;
+    grid-auto-rows: 200px;
+    justify-items: center;
+    align-items: end;
+    border: 1px solid red;
+}
+
+.container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: royalblue;
+    padding: 1rem;
+}
+
+.container > div:nth-child(2){
+    align-self: start;
+}
+
+.container > div:nth-child(even){
+    background-color: skyblue;
+}
