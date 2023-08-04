@@ -1,0 +1,33 @@
+/* 
+   A unidade fr (fração) é uma unidade de medida utilizada exclusivamente no contexto do CSS Grid Layout. 
+   Ela é usada para definir as proporções das colunas ou linhas em uma grade (grid).
+
+  A unidade fr representa uma fração do espaço disponível dentro do grid container. 
+  Quando você usa fr para definir o tamanho de uma coluna ou linha, 
+  ela receberá uma parte proporcional do espaço restante após alocar espaço para as outras colunas ou linhas definidas de forma fixa ou por outras unidades de medida.
+*/
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-column-gap: 1rem;
+    grid-row-gap: 10px;
+    grid-template-rows: repeat(3, 50px) ;
+    grid-auto-rows: 200px;
+}
+
+.container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: royalblue;
+}
+.container > div:nth-child(even){
+    background-color: skyblue;
+}
